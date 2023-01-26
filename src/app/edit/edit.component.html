@@ -1,0 +1,13 @@
+<form [formGroup]="post" >
+    <label>Sid:-</label>&nbsp;
+        <input type="text" pInputText formControlName="sid" /><br><br>
+        <label>SName:-</label>&nbsp;
+        <input type="text" pInputText formControlName="sname" /><br><br>
+        <label>Department:-</label>&nbsp;
+        <input type="text" pInputText formControlName="department" /><br><br>
+        <label>Phone No:-</label>&nbsp;
+        <input type="text" pInputText formControlName="phonenumber" /><br><br>
+        
+        <p-button label="Submit" (click)="submit()" ></p-button>
+    
+    </form>

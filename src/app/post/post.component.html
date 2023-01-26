@@ -1,0 +1,25 @@
+<!-- <div>
+    <form #userForm="ngForm" (ngSubmit)="getUserData(userForm.value)">
+
+sid:-<input type="text" ngModel name="sid" pInputText ><br><br>
+sname:-<input type="text" ngModel name="sname" pInputText /><br><br>
+department:-<input type="text" ngModel name="department"pInputText /><br><br>
+phonenumber:-<input type="text" ngModel name="phonenumber" pInputText /><br><br>
+<p-button type="submit"> Login</p-button>
+</form>
+</div> -->
+
+
+<form [formGroup]="post" >
+    <label>Sid:-</label>&nbsp;
+        <input type="text" pInputText formControlName="sid" /><br><br>
+        <label>SName:-</label>&nbsp;
+        <input type="text" pInputText formControlName="sname" /><br><br>
+        <label>Department:-</label>&nbsp;
+        <input type="text" pInputText formControlName="department" /><br><br>
+        <label>Phone No:-</label>&nbsp;
+        <input type="text" pInputText formControlName="phonenumber" /><br><br>
+        
+        <p-button label="Submit" (click)="submit()" ></p-button>
+    
+    </form>

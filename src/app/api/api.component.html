@@ -1,0 +1,64 @@
+  
+
+
+
+
+<div style="margin-left: 5%;">
+<h1>API__INTEGRATION</h1>
+
+<p-table [value]="getD">
+    <ng-template pTemplate="header"  >
+        <tr>
+            <th>Sid</th>
+            <th>Sname</th>
+            <th>Department</th>
+            <th>phonenumber </th>
+            <th >Action</th>
+        </tr>
+
+     
+    </ng-template>
+    <ng-template pTemplate="body" let-a>
+        <tr >
+            <td>{{a.sid}}</td>
+            <td>{{a.sname}}</td>
+            <td>{{a.department}}</td>
+            <td>{{a.phonenumber}}</td>
+            <td>    <button pButton type="button" class="p-button-link"  (click)="Del(a.sid)">Delete</button>
+              <button pButton type="button"  *ngIf="!updated" class="p-button-link" (click)="edit(a)">Edit</button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+</div>
+<h1>{{errmsg}}</h1>
+
+
+
+
+<button pButton type="button" class="p-button-link" (click)="add()">ADD ITEM</button>
+
+<form *ngIf="added" [formGroup]="newTaskForm1">
+<div [hidden]="!ff"></div>
+sid:-<input type="text"  pInputText  formControlName="sid"><br><br>
+sname:-<input type="text"  pInputText  formControlName="sname"><br><br>
+
+Department:-<input type="text"  pInputText  formControlName="department"><br><br>
+
+phonenumber:-<input type="text"  pInputText  formControlName="phonenumber"><br><br>
+
+<button pButton type="button" class="p-button-link" (click)="addI()" >Submit</button>
+
+
+
+</form >
+
+<div >
+    <form *ngIf="updated" [formGroup]="newTaskForm" >
+       sid :   <input type="text"  pInputText  formControlName="sid"><br><br>
+       sname :  <input type="text"   pInputText formControlName="sname"><br><br>
+       Department :<input type="text"  pInputText  formControlName="department"><br><br>
+       phonenumber : <input type="text"  pInputText  formControlName="phonenumber"><br><br>
+       <button pButton (click)="update()">Update</button>
+      </form>
+   </div>

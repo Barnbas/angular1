@@ -1,0 +1,31 @@
+<!-- <h1>Data From EndPoint</h1>     -->
+<!-- <p>{{this.result}}</p> -->
+
+<div style="margin-left: 25%;">
+    <h1>Data From EndPoint</h1>
+
+    <table style="border: solid rgb(11, 32, 221);">
+        <thead>
+            <tr>
+                <th>Sid</th>
+                <th>Sname</th>
+                <th>Department</th>
+                <th>phonenumber </th>
+                <th >Action</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr *ngFor="let a of this.details">
+                    <td>{{a.sid}}</td>
+                    <td>{{a.sname}}</td>
+                    <td>{{a.department}}</td>
+                    <td>{{a.phonenumber}}</td>
+                    <td>    <button pButton type="button" class="p-button-link"  (click)="Del(a.sid)">Delete</button>
+                      <button pButton type="button"  class="p-button-link" (click)="edit(a)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+    </table>
+
+</div>
+<h1>{{errmsg}}</h1>
